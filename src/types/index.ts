@@ -23,8 +23,8 @@ export interface Assessment {
   title: string;
   description: string;
   questions: Question[];
-  startTime: string;
-  endTime: string;
+  startTime: string; // ISO string format
+  endTime: string;   // ISO string format
   createdBy: string;
   assignedStudents: string[];
   status: 'SCHEDULED' | 'ONGOING' | 'COMPLETED';

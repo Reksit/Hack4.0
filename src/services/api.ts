@@ -54,6 +54,7 @@ export const assessmentAPI = {
   submit: (assessmentId: string, submissionData: any) => 
     api.post(`/assessments/${assessmentId}/submit`, submissionData),
   getResults: (assessmentId: string) => api.get(`/assessments/${assessmentId}/results`),
+  getResultsWithStudents: (assessmentId: string) => api.get(`/assessments/${assessmentId}/results-with-students`),
   getStudentResults: (studentId: string) => api.get(`/assessments/results/student/${studentId}`),
   getStatus: (assessmentId: string) => api.get(`/assessments/${assessmentId}/status`),
   // Add method to check if student has already submitted

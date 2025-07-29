@@ -31,7 +31,7 @@ const AssessmentResultsModal: React.FC<AssessmentResultsModalProps> = ({ assessm
   const fetchResults = async () => {
     setLoading(true);
     try {
-      const response = await assessmentAPI.getResults(assessment.id);
+      const response = await assessmentAPI.getResultsWithStudents(assessment.id);
       setResults(response.data);
     } catch (error) {
       toast.error('Failed to fetch assessment results');

@@ -14,8 +14,8 @@ public class Assessment {
     private String title;
     private String description;
     private List<Question> questions;
-    private LocalDateTime startTime;
-    private LocalDateTime endTime;
+    private String startTime; // Store as ISO string for better timezone handling
+    private String endTime;   // Store as ISO string for better timezone handling
     private String createdBy; // Professor ID
     private List<String> assignedStudents;
     private AssessmentStatus status = AssessmentStatus.SCHEDULED;
@@ -43,11 +43,11 @@ public class Assessment {
     public List<Question> getQuestions() { return questions; }
     public void setQuestions(List<Question> questions) { this.questions = questions; }
 
-    public LocalDateTime getStartTime() { return startTime; }
-    public void setStartTime(LocalDateTime startTime) { this.startTime = startTime; }
+    public String getStartTime() { return startTime; }
+    public void setStartTime(String startTime) { this.startTime = startTime; }
 
-    public LocalDateTime getEndTime() { return endTime; }
-    public void setEndTime(LocalDateTime endTime) { this.endTime = endTime; }
+    public String getEndTime() { return endTime; }
+    public void setEndTime(String endTime) { this.endTime = endTime; }
 
     public String getCreatedBy() { return createdBy; }
     public void setCreatedBy(String createdBy) { this.createdBy = createdBy; }

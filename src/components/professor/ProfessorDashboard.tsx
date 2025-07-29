@@ -4,6 +4,7 @@ import { MessageCircle, BookOpen, Calendar, Users, BarChart3, LogOut } from 'luc
 import ChatSection from '../common/ChatSection';
 import AssessmentManagement from './AssessmentManagement';
 import AlumniManagement from './AlumniManagement';
+import StudentResultsSection from './StudentResultsSection';
 
 const ProfessorDashboard: React.FC = () => {
   const { user, logout } = useAuth();
@@ -12,30 +13,21 @@ const ProfessorDashboard: React.FC = () => {
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: BookOpen },
     { id: 'assessments', label: 'Assessments', icon: Calendar },
+    { id: 'student-results', label: 'Student Results', icon: BarChart3 },
     { id: 'alumni', label: 'Alumni Management', icon: Users },
     { id: 'chat', label: 'Chat', icon: MessageCircle },
-    { id: 'analytics', label: 'Analytics', icon: BarChart3 },
   ];
 
   const renderContent = () => {
     switch (activeSection) {
       case 'assessments':
         return <AssessmentManagement />;
+      case 'student-results':
+        return <StudentResultsSection />;
       case 'alumni':
         return <AlumniManagement />;
       case 'chat':
         return <ChatSection />;
-      case 'analytics':
-        return (
-          <div className="p-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-8">Analytics & Insights</h1>
-            <div className="bg-white rounded-lg shadow-md p-8 text-center">
-              <BarChart3 className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-lg font-medium text-gray-900 mb-2">Analytics Coming Soon</h3>
-              <p className="text-gray-600">Detailed assessment analytics and student performance insights will be available here.</p>
-            </div>
-          </div>
-        );
       default:
         return (
           <div className="p-8">
